@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Quizgame</string>
+    <string name="congratulations">Congratulations. You have won!</string>
 </resources>
