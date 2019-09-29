@@ -8,4 +8,5 @@
     <string name="easy_busy">Easy busy!</string> <!--Added by Nkechi Nnaji-->
     <string name="quite_challenging">Quite challenging!</string><!--Added by Nkechi Nnaji-->
     <string name="let_s_get_started">Let\'s Get Started!</string> <!--Added by Nkechi Nnaji-->
+    <string name="congratulations">Congratulations. You have won!</string>
 </resources>
