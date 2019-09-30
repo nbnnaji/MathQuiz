@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Name: Nkechi Nnaji
+ Modification: Added cardviews for different levels
+ Date: Sept 26, 2019
+ -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools ="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/selection_level_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center"
+    android:layout_marginTop="50dp"
+    android:gravity="center"
+    android:inputType="textMultiLine"
+    android:text="@string/select_level"
+    android:textColor="#000000"
+    android:textSize="25.0sp"
+    android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+    android:id="@+id/btn_trial"
+    android:layout_width="320dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="32dp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="6dp"
+        card_view:cardUseCompatPadding="true"
+    android:layout_gravity="center_horizontal">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_trial"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:text="@string/trial" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/give_it_a_try" />
+
+    </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+    android:id="@+id/btn_easy"
+    android:layout_width="320dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="16dp"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardElevation="6dp"
+    card_view:cardUseCompatPadding="true"
+    android:layout_gravity="center_horizontal">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src ="@drawable/ic_easy"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:text="@string/easy" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/easy_busy" />
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+    android:id="@+id/btn_difficult"
+    android:layout_width="320dp"
+    android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="6dp"
+        card_view:cardUseCompatPadding="true"
+    android:layout_gravity="center_horizontal">
+
+
+<LinearLayout
+    android:id="@+id/products_content_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_difficult"/>
+
+    <TextView
+        android:id="@+id/csf_product_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:text="Difficult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quite_challenging" />
+
+</LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

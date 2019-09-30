@@ -3,7 +3,6 @@ package sarveshchavan777.quizgame;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -35,7 +34,7 @@ public class Splash extends Activity {
             public void onAnimationEnd(Animation animation) {
 
                 finish();
-                Intent intent = new Intent(Splash.this, MenuOptions.class);
+                Intent intent = new Intent(Splash.this, LevelSelectionActivity.class);
                 startActivity(intent);
             }
 
