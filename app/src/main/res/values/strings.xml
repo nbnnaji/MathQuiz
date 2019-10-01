@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Quizgame</string>
-    <string name="select_level">Select Level</string>
-    <string name="easy">Easy</string>
-    <string name="trial">Trial</string>
-    <string name="give_it_a_try">Give it a try!</string>
-    <string name="easy_busy">Easy busy!</string>
-    <string name="quite_challenging">Quite challenging!</string>
+    <string name="select_level">Select Level</string> <!--Added by Nkechi Nnaji-->
+    <string name="easy">Easy</string> <!--Added by Nkechi Nnaji-->
+    <string name="trial">Trial</string> <!--Added by Nkechi Nnaji-->
+    <string name="give_it_a_try">Give it a try!</string> <!--Added by Nkechi Nnaji-->
+    <string name="easy_busy">Easy busy!</string> <!--Added by Nkechi Nnaji-->
+    <string name="quite_challenging">Quite challenging!</string> <!--Added by Nkechi Nnaji-->
 </resources>

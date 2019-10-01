@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 /**
  * Created by LENOVO on 12/12/2016.
  * Modified by Nkechi Nnaji, Sept 26 2019
+ * Description: Homescreen for selecting levels
  */
 
 public class LevelSelectionActivity extends AppCompatActivity {
