@@ -42,22 +42,23 @@ public class QuizHelper extends SQLiteOpenHelper {
         // db.close();
     }
 
+    // Added by Clinton Avery
     private void addQuestion() {
-        Question q1 = new Question("4+3 = ?", "7", "8", "6", "7");
+        Question q1 = new Question("4x3 = ?", "7", "8", "12", "12");
         this.addQuestion(q1);
-        Question q2 = new Question("1+19 = ?", "18", "19", "20", "20");
+        Question q2 = new Question("1x19 = ?", "18", "19", "20", "19");
         this.addQuestion(q2);
         Question q3 = new Question("11-4 = ?", "6", "7", "8", "7");
         this.addQuestion(q3);
-        Question q4 = new Question("4+8 = ?", "12", "13", "14", "12");
+        Question q4 = new Question("4x8 = ?", "12", "32", "14", "32");
         this.addQuestion(q4);
-        Question q5 = new Question("4-2 = ?", "1", "3", "2", "2");
+        Question q5 = new Question("4x2 = ?", "1", "8", "2", "8");
         this.addQuestion(q5);
         Question q6 = new Question("0+1 = ?", "1", "0", "10", "1");
         this.addQuestion(q6);
         Question q7 = new Question("10-10 = ?", "0", "9", "1", "0");
         this.addQuestion(q7);
-        Question q8 = new Question("4+5 = ?", "8", "7", "9", "9");
+        Question q8 = new Question("4x5 = ?", "20", "25", "9", "20");
         this.addQuestion(q8);
         Question q9 = new Question("2+4 = ?", "6", "7", "5", "6");
         this.addQuestion(q9);
@@ -67,23 +68,23 @@ public class QuizHelper extends SQLiteOpenHelper {
         this.addQuestion(q11);
         Question q12 = new Question("2+6 = ?", "8", "7", "5", "8");
         this.addQuestion(q12);
-        Question q13 = new Question("1+5 = ?", "7", "6", "5", "6");
+        Question q13 = new Question("5÷5 = ?", "1", "6", "5", "1");
         this.addQuestion(q13);
         Question q14 = new Question("12-10 = ?", "1", "2", "3", "2");
         this.addQuestion(q14);
         Question q15 = new Question("13+1 = ?", "14", "15", "16", "14");
         this.addQuestion(q15);
-        Question q16 = new Question("2-1 = ?", "2", "1", "0", "1");
+        Question q16 = new Question("5÷1 = ?", "2", "1", "5", "5");
         this.addQuestion(q16);
         Question q17 = new Question("6-6 = ?", "6", "12", "0", "0");
         this.addQuestion(q17);
         Question q18 = new Question("5-1 = ?", "4", "3", "2", "4");
         this.addQuestion(q18);
-        Question q19 = new Question("3+3 = ?", "6", "7", "5", "6");
+        Question q19 = new Question("12÷3 = ?", "4", "7", "5", "4");
         this.addQuestion(q19);
         Question q20 = new Question("4+2 = ?", "6", "7", "5", "6");
         this.addQuestion(q20);
-        Question q21 = new Question("6-5 = ?", "5", "4", "1", "1");
+        Question q21 = new Question("5÷5 = ?", "5", "4", "1", "1");
         this.addQuestion(q21);
         // END
     }
