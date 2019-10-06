@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Quizgame</string>
+    <string name="submitButtonLabel"
+        id='1'>Submit</string>
 </resources>

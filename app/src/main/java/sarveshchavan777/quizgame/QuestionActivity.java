@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
@@ -16,7 +17,9 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -28,8 +31,9 @@ public class QuestionActivity extends Activity {
 
     Question currentQ;
     TextView txtQuestion, times, scored;
+    EditText whereTheAnswerGetsTyped;
     Button button1, button2, button3;
-
+    CharSequence submitLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class QuestionActivity extends Activity {
         button3 = (Button) findViewById(R.id.button3);
 
 
+        whereTheAnswerGetsTyped = (EditText) findViewById(R.id.theUserTypesTheAnswerHere);
+        showSoftKeyboard(whereTheAnswerGetsTyped);
 
 
 
@@ -71,7 +77,7 @@ public class QuestionActivity extends Activity {
             public void onClick(View v) {
 
 
-                getAnswer(button1.getText().toString());
+                getAnswer(whereTheAnswerGetsTyped.getText().toString());
             }
         });
 
@@ -167,15 +173,25 @@ public class QuestionActivity extends Activity {
 
     }
 
+
     private void setQuestionView() {
 
         // the method which will put all things together
         txtQuestion.setText(currentQ.getQUESTION());
-        button1.setText(currentQ.getOPTA());
+        //button1.setText(currentQ.getOPTA());
         button2.setText(currentQ.getOPTB());
         button3.setText(currentQ.getOPTC());
 
+
         qid++;
+    }
+
+    public void showSoftKeyboard(View view) {
+        if (view.requestFocus()) {
+            InputMethodManager imm = (InputMethodManager)
+                    getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+        }
     }
 
 
