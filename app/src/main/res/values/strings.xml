@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MathQuiz</string><!--Added by Nkechi Nnaji-->
     <string name="select_level">Select Level</string> <!--Added by Nkechi Nnaji-->
+    <string name="splash_title">Math Quiz</string> <!--Added by Clinton Avery-->
     <string name="easy">Easy</string> <!--Added by Nkechi Nnaji-->
     <string name="trial">Trial</string> <!--Added by Nkechi Nnaji-->
     <string name="give_it_a_try">Give it a try!</string> <!--Added by Nkechi Nnaji-->
