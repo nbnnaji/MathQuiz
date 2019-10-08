@@ -21,7 +21,7 @@ public class won extends Activity {
         int y = b.getInt("score");
         tv.setText("FINAL SCORE:" + y);
 
-        textView = (TextView) findViewById(R.id.title);
-        textview.setText(R.string.congratulations)
+        TextView textView = (TextView) findViewById(R.id.title);
+        textView.setText(R.string.congratulations);
     }
 }
