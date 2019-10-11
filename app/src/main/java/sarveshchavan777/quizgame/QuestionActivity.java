@@ -151,6 +151,8 @@ public class QuestionActivity extends Activity {
             // TODO Auto-generated method stub
 
             long millis = millisUntilFinished;
+
+            @SuppressLint("DefaultLocale") //Added by Nkechi Nnaji
             String hms = String.format(
                     "%02d:%02d:%02d",
                     TimeUnit.MILLISECONDS.toHours(millis),
