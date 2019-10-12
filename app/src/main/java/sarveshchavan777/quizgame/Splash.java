@@ -9,7 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import sarveshchavan777.quizgame.LevelSelection.SelectionLevelHomeScreen;
 
 /**
  * Created by LENOVO on 12/12/2016.
@@ -42,7 +43,7 @@ public class Splash extends Activity {
                                    public void onClick(View view) {
                                        btn.startAnimation(animation);
 
-                                       Intent intent = new Intent(Splash.this, LevelSelectionActivity.class);
+                                       Intent intent = new Intent(Splash.this, SelectionLevelHomeScreen.class);
                                        startActivity(intent);
                                        overridePendingTransition(R.anim.slide_down,  R.anim.fadeout);
                                        finish();

@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame;
+package sarveshchavan777.quizgame.LevelSelection;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +9,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
+import sarveshchavan777.quizgame.LevelSelection.difficulty_level.DifficultyLevelActivity;
+import sarveshchavan777.quizgame.QuestionActivity;
+import sarveshchavan777.quizgame.R;
+
 /**
  * Created by LENOVO on 12/12/2016.
  * Modified by Nkechi Nnaji, Sept 26 2019
  * Description: Homescreen for selecting levels
  */
 
-public class LevelSelectionActivity extends AppCompatActivity {
+public class SelectionLevelHomeScreen extends AppCompatActivity {
 
     CardView cardView;
 
@@ -37,11 +41,28 @@ public class LevelSelectionActivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LevelSelectionActivity.this, QuestionActivity.class);
+                Intent intent = new Intent(SelectionLevelHomeScreen.this, QuestionActivity.class);
                 startActivity(intent);
             }
         });
 
+        cardView = findViewById(R.id.btn_trial);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectionLevelHomeScreen.this, HowToPlayActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardView = findViewById(R.id.btn_difficult);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectionLevelHomeScreen.this, DifficultyLevelActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
