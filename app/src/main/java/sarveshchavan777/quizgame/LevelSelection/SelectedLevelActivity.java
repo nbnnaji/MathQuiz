@@ -1,21 +1,18 @@
-package sarveshchavan777.quizgame.LevelSelection.difficulty_level;
+package sarveshchavan777.quizgame.LevelSelection;
 
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.Random;
-
 import sarveshchavan777.quizgame.R;
 
-public class DifficultyLevelActivity extends AppCompatActivity implements View.OnClickListener {
+public class SelectedLevelActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private int level = 0, answer = 0, operator = 0, operand1 = 0, operand2 = 0;
+    private int level , answer, operator, operand1, operand2  = 0;
+    //private int level = 0, answer = 0, operator = 0, operand1 = 0, operand2 = 0;
     private final int ADD_OPERATOR = 0, SUBTRACT_OPERATOR = 1, MULTIPLY_OPERATOR = 2, DIVIDE_OPERATOR = 3;
     private String[] operators = {"+", "-", "x", "/"};
     private int[][] levelMin = {
@@ -36,7 +33,7 @@ public class DifficultyLevelActivity extends AppCompatActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_difficulty_level);
+        setContentView(R.layout.activity_selected_level);
         question =  (TextView)findViewById(R.id.question);
         answerTxt = (TextView)findViewById(R.id.answer);
         response =  (ImageView)findViewById(R.id.response);
@@ -67,6 +64,15 @@ public class DifficultyLevelActivity extends AppCompatActivity implements View.O
         btn0.setOnClickListener(this);
         enterBtn.setOnClickListener(this);
         clearBtn.setOnClickListener(this);
+
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null)
+        {
+            int passedLevel = extras.getInt("level", -1);
+            if(passedLevel>=0) level = passedLevel;
+        }
+
 
         random = new Random();
         chooseQuestion();

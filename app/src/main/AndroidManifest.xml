@@ -8,8 +8,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LevelSelection.HowToPlayActivity"></activity>
-        <activity android:name=".LevelSelection.difficulty_level.DifficultyLevelActivity" />
+        <activity android:name=".LevelSelection.InstructionsActivity"></activity>
+        <activity android:name=".LevelSelection.SelectedLevelActivity" />
         <activity android:name=".QuestionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
         <activity android:name=".ResultActivity" />
         <activity
             android:name=".LevelSelection.SelectionLevelHomeScreen"
-            android:label="Level Options">
+            android:label="Welcome!">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

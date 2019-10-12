@@ -6,10 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import sarveshchavan777.quizgame.QuestionActivity;
 import sarveshchavan777.quizgame.R;
 
-public class HowToPlayActivity extends AppCompatActivity {
+public class InstructionsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +19,7 @@ public class HowToPlayActivity extends AppCompatActivity {
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HowToPlayActivity.this, SelectionLevelHomeScreen.class);
+                Intent intent = new Intent(InstructionsActivity.this, SelectionLevelHomeScreen.class);
                 startActivity(intent);
             }
         });

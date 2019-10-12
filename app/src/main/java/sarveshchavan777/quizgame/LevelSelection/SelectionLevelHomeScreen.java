@@ -1,27 +1,31 @@
 package sarveshchavan777.quizgame.LevelSelection;
 
+import android.content.ContextWrapper;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
-import sarveshchavan777.quizgame.LevelSelection.difficulty_level.DifficultyLevelActivity;
 import sarveshchavan777.quizgame.QuestionActivity;
 import sarveshchavan777.quizgame.R;
 
 /**
  * Created by LENOVO on 12/12/2016.
- * Modified by Nkechi Nnaji, Sept 26 2019
+ * Modified by Nkechi Nnaji, Sept 26 2019, October 11, 2019
  * Description: Homescreen for selecting levels
  */
 
 public class SelectionLevelHomeScreen extends AppCompatActivity {
 
     CardView cardView;
+    private String[] challengeLevel = {"Easy", "Medium", "Hard"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,9 @@ public class SelectionLevelHomeScreen extends AppCompatActivity {
 //           getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
             toolbar.setTitle("Home");
         }
+
+        /*Added by Nkechi Nnaji*/
+
         cardView = findViewById(R.id.btn_easy);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,21 +53,43 @@ public class SelectionLevelHomeScreen extends AppCompatActivity {
             }
         });
 
-        cardView = findViewById(R.id.btn_trial);
+        /*Added by Nkechi Nnaji*/
+        cardView = findViewById(R.id.instructions_btn);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectionLevelHomeScreen.this, HowToPlayActivity.class);
+                Intent intent = new Intent(SelectionLevelHomeScreen.this, InstructionsActivity.class);
                 startActivity(intent);
             }
         });
 
-        cardView = findViewById(R.id.btn_difficult);
+        /*Added by Nkechi Nnaji*/
+        cardView = findViewById(R.id.level_selection_btn);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectionLevelHomeScreen.this, DifficultyLevelActivity.class);
-                startActivity(intent);
+                //play button
+                AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper((SelectionLevelHomeScreen.this), R.style.BlueTeam_Dialog_Theme));
+                builder.setTitle("Take the challenge")
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .setSingleChoiceItems(challengeLevel, 0, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int levelChosen) {
+                                dialog.dismiss();
+
+                                startMathQuiz(levelChosen);
+
+                            }
+
+
+                        });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         });
     }
@@ -69,5 +98,13 @@ public class SelectionLevelHomeScreen extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.selection_level_menu, menu);
         return true;
+    }
+
+
+    private void startMathQuiz(int levelChosen)
+    {
+        Intent playIntent = new Intent(this, SelectedLevelActivity.class);
+        playIntent.putExtra("level", levelChosen);
+        this.startActivity(playIntent);
     }
 }

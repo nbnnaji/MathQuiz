@@ -10,5 +10,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+        <!--Added by Nkechi Nnaji
+        Styling for dialogue box for selecting game levels
+        -->
+        <style name="BlueTeam.Dialog.Theme" parent="Theme.AppCompat.Light.Dialog">
+            <item name="android:textColor">@color/colorPrimaryDark</item>
+            <item name="android:background">#ffffff</item>
+            <item name="android:textSize">20sp</item>
+        </style>
+
 </resources>
 
