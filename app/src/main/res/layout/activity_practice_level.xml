@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Name: Nkechi Nnaji
+ Modification: Added screen for practice levels
+ Date: October 13, 2019
+ -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background"
     android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/practice_level_toolbar"
+        android:background="@color/primary_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -28,7 +38,7 @@
             android:gravity="center|right"
             android:paddingRight="20dp"
             android:text="Score: 0"
-            android:textColor="#ffffffff"
+            android:textColor="@color/primary_text"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -78,8 +88,8 @@
             android:background="@drawable/enter_background"
             android:gravity="center"
             android:padding="5dp"
-            android:text="C"
-            android:textColor="#ff333333"
+            android:text="DELETE"
+            android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -105,7 +115,7 @@
             android:padding="5dp"
             android:tag="7"
             android:text="7"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -120,7 +130,7 @@
             android:padding="5dp"
             android:tag="8"
             android:text="8"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -135,7 +145,7 @@
             android:padding="5dp"
             android:tag="9"
             android:text="9"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -157,7 +167,7 @@
             android:padding="5dp"
             android:tag="4"
             android:text="4"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -172,7 +182,7 @@
             android:padding="5dp"
             android:tag="5"
             android:text="5"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -187,7 +197,7 @@
             android:padding="5dp"
             android:tag="6"
             android:text="6"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -209,7 +219,7 @@
             android:padding="5dp"
             android:tag="1"
             android:text="1"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -224,7 +234,7 @@
             android:padding="5dp"
             android:tag="2"
             android:text="2"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -239,7 +249,7 @@
             android:padding="5dp"
             android:tag="3"
             android:text="3"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -261,7 +271,7 @@
             android:padding="5dp"
             android:tag="0"
             android:text="0"
-            android:textColor="#ffcccccc"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -275,7 +285,7 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="Enter"
-            android:textColor="#ff333333"
+            android:textColor="@color/primary_text"
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>

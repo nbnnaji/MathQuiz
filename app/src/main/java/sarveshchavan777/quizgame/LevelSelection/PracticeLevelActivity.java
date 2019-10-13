@@ -1,56 +1,104 @@
 package sarveshchavan777.quizgame.LevelSelection;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Random;
+
 import sarveshchavan777.quizgame.R;
 
-public class SelectedLevelActivity extends AppCompatActivity implements View.OnClickListener {
+public class PracticeLevelActivity extends AppCompatActivity implements View.OnClickListener {
 
+    /*
+        Variables
+     */
     private int level , answer, operator, operand1, operand2  = 0;
-    //private int level = 0, answer = 0, operator = 0, operand1 = 0, operand2 = 0;
-    private final int ADD_OPERATOR = 0, SUBTRACT_OPERATOR = 1, MULTIPLY_OPERATOR = 2, DIVIDE_OPERATOR = 3;
+
+    /*
+        Operators
+     */
+    private final int ADD = 0, SUBTRACT = 1, MULTIPLY = 2, DIVIDE = 3;
+
+    /*
+    Array of operators
+     */
     private String[] operators = {"+", "-", "x", "/"};
-    private int[][] levelMin = {
+
+    /*
+    Array of:
+    Levels (vertical): Easy, medium & Hard
+    Operators (horizontal) : Addition, subtraction, multiplication & division
+     */
+    private int[][] minimumLevel = {
             {1, 11, 21},
             {1, 5, 10},
             {2, 5, 10},
             {2, 3, 5}};
-    private int[][] levelMax = {
+    private int[][] maximumLevel = {
             {10, 25, 50},
             {10, 20, 30},
             {5, 10, 15},
             {10, 50, 100}};
+
+    /*
+       Instance of Random class
+     */
     private Random random;
+
+    /*
+    Question, answer text & score text
+     */
     private TextView question, answerTxt, scoreTxt;
+
+    /*
+        Response
+     */
     private ImageView response;
+
+    /*
+        Keyboard buttons
+     */
     private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, enterBtn, clearBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected_level);
-        question =  (TextView)findViewById(R.id.question);
-        answerTxt = (TextView)findViewById(R.id.answer);
-        response =  (ImageView)findViewById(R.id.response);
-        scoreTxt =  (TextView)findViewById(R.id.score);
+        setContentView(R.layout.activity_practice_level);
 
-        btn1 = (Button)findViewById(R.id.btn1);
-        btn2 = (Button)findViewById(R.id.btn2);
-        btn3 = (Button)findViewById(R.id.btn3);
-        btn4 = (Button)findViewById(R.id.btn4);
-        btn5 = (Button)findViewById(R.id.btn5);
-        btn6 = (Button)findViewById(R.id.btn6);
-        btn7 = (Button)findViewById(R.id.btn7);
-        btn8 = (Button)findViewById(R.id.btn8);
-        btn9 = (Button)findViewById(R.id.btn9);
-        btn0 = (Button)findViewById(R.id.btn0);
-        enterBtn = (Button)findViewById(R.id.enter);
-        clearBtn = (Button)findViewById(R.id.clear);
+        Toolbar toolbar = findViewById(R.id.practice_level_toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            toolbar.setTitle("Practice");
+        }
+
+        question =  findViewById(R.id.question);
+        answerTxt = findViewById(R.id.answer);
+        response =  findViewById(R.id.response);
+        scoreTxt =  findViewById(R.id.score);
+
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
+        btn5 = findViewById(R.id.btn5);
+        btn6 = findViewById(R.id.btn6);
+        btn7 = findViewById(R.id.btn7);
+        btn8 = findViewById(R.id.btn8);
+        btn9 = findViewById(R.id.btn9);
+        btn0 = findViewById(R.id.btn0);
+        enterBtn = findViewById(R.id.enter);
+        clearBtn = findViewById(R.id.clear);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -85,14 +133,14 @@ public class SelectedLevelActivity extends AppCompatActivity implements View.OnC
         operand1 = getOperand();
         operand2 = getOperand();
 
-        if(operator == SUBTRACT_OPERATOR){
+        if(operator == SUBTRACT){
             while(operand2>operand1){
                 operand1 = getOperand();
                 operand2 = getOperand();
             }
         }
 
-        else if(operator==DIVIDE_OPERATOR){
+        else if(operator==DIVIDE){
             while((((double)operand1/(double)operand2)%1 > 0) || (operand1==operand2))
             {
                 operand1 = getOperand();
@@ -102,16 +150,16 @@ public class SelectedLevelActivity extends AppCompatActivity implements View.OnC
 
         switch(operator)
         {
-            case ADD_OPERATOR:
+            case ADD:
                 answer = operand1+operand2;
                 break;
-            case SUBTRACT_OPERATOR:
+            case SUBTRACT:
                 answer = operand1-operand2;
                 break;
-            case MULTIPLY_OPERATOR:
+            case MULTIPLY:
                 answer = operand1*operand2;
                 break;
-            case DIVIDE_OPERATOR:
+            case DIVIDE:
                 answer = operand1/operand2;
                 break;
             default:
@@ -123,8 +171,8 @@ public class SelectedLevelActivity extends AppCompatActivity implements View.OnC
 
     private int getOperand(){
         //return operand number
-        return random.nextInt(levelMax[operator][level] - levelMin[operator][level] + 1)
-                + levelMin[operator][level];
+        return random.nextInt(maximumLevel[operator][level] - minimumLevel[operator][level] + 1)
+                + minimumLevel[operator][level];
     }
 
     @Override
@@ -142,12 +190,16 @@ public class SelectedLevelActivity extends AppCompatActivity implements View.OnC
                     scoreTxt.setText("Score: "+(exScore+1));
                     response.setImageResource(R.drawable.ic_right);
                     response.setVisibility(View.VISIBLE);
+                    Toast.makeText(this,"Well Done!", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
                     //incorrect
                     scoreTxt.setText("Score: 0");
                     response.setImageResource(R.drawable.ic_wrong);
                     response.setVisibility(View.VISIBLE);
+                    Toast.makeText(this,"Wrong answer!", Toast.LENGTH_LONG).show();
+
                 }
                 chooseQuestion();
             }
@@ -174,7 +226,22 @@ public class SelectedLevelActivity extends AppCompatActivity implements View.OnC
     }
 
     @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(PracticeLevelActivity.this, SelectionLevelHomeScreen.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
 
     }
 }

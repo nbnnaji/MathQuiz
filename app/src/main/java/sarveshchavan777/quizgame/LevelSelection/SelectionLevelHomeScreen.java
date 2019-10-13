@@ -1,6 +1,5 @@
 package sarveshchavan777.quizgame.LevelSelection;
 
-import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -70,7 +69,7 @@ public class SelectionLevelHomeScreen extends AppCompatActivity {
             public void onClick(View view) {
                 //play button
                 AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper((SelectionLevelHomeScreen.this), R.style.BlueTeam_Dialog_Theme));
-                builder.setTitle("Take the challenge")
+                builder.setTitle("Choose practice level")
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -103,7 +102,7 @@ public class SelectionLevelHomeScreen extends AppCompatActivity {
 
     private void startMathQuiz(int levelChosen)
     {
-        Intent playIntent = new Intent(this, SelectedLevelActivity.class);
+        Intent playIntent = new Intent(this, PracticeLevelActivity.class);
         playIntent.putExtra("level", levelChosen);
         this.startActivity(playIntent);
     }
