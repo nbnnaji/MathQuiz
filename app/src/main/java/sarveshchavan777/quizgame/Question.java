@@ -10,41 +10,33 @@ public class Question extends Activity {
     private String OPTB;
     private String OPTC;
 
-    private String ANSWER;
+    public int ANSWER;
 
-
-    public Question() {
-        ID = 0;
-        QUESTION = "";
-        OPTA = "";
-        OPTB = "";
-        OPTC = "";
-
-        ANSWER = "";
-
+    // modified by Clinton Avery
+    public Question(int id) {
+        int firstDigit;
+        int secondDigit;
+        ID = id;
+        firstDigit = (int)Math.floor(Math.random() * 10);
+        secondDigit = (int)Math.floor(Math.random() * 10);
+        QUESTION = getRandomQuestion(firstDigit, secondDigit);
+        ANSWER = getAnswerToRandomQuestion(firstDigit, secondDigit);
     }
 
-    public Question(String qUESTION, String oPTA, String oPTB, String oPTC,
-                    String aNSWER) {
-        QUESTION = qUESTION;
-        OPTA = oPTA;
-        OPTB = oPTB;
-        OPTC = oPTC;
-
-        ANSWER = aNSWER;
-
+    // added by Clinton Avery
+    private String getRandomQuestion(int firstDigit, int secondDigit){
+        String theQuestionOutput = String.format("%s X %s = ", firstDigit, secondDigit);
+        return theQuestionOutput;
     }
 
-    public int getID() {
-        return ID;
+    // added by Clinton Avery
+    private int getAnswerToRandomQuestion(int firstDigit, int secondDigit){
+        int theAnswerToTheRandomQuestion = firstDigit * secondDigit;
+        return theAnswerToTheRandomQuestion;
     }
 
     public String getQUESTION() {
         return QUESTION;
-    }
-
-    public String getOPTA() {
-        return OPTA;
     }
 
     public String getOPTB() {
@@ -55,7 +47,7 @@ public class Question extends Activity {
         return OPTC;
     }
 
-    public String getANSWER() {
+    public int getANSWER() {
         return ANSWER;
     }
 
@@ -67,19 +59,7 @@ public class Question extends Activity {
         QUESTION = qUESTION;
     }
 
-    public void setOPTA(String oPTA) {
-        OPTA = oPTA;
-    }
-
-    public void setOPTB(String oPTB) {
-        OPTB = oPTB;
-    }
-
-    public void setOPTC(String oPTC) {
-        OPTC = oPTC;
-    }
-
-    public void setANSWER(String aNSWER) {
+    public void setANSWER(int aNSWER) {
         ANSWER = aNSWER;
     }
 

@@ -1,5 +1,10 @@
 <resources>
+<<<<<<< Updated upstream
     <string name="app_name">MathQuiz</string><!--Added by Nkechi Nnaji-->
+=======
+    <string name="app_name">Quizgame</string>
+    <string name="submitButtonLabel" id='1'>Submit</string>
+>>>>>>> Stashed changes
     <string name="select_level">Select Level</string> <!--Added by Nkechi Nnaji-->
     <string name="splash_title">Math Quiz</string> <!--Added by Clinton Avery-->
     <string name="easy">Easy</string> <!--Added by Nkechi Nnaji-->
