@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame;
+package blueteammathquiz.quizgame.segments.splash.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,14 +10,15 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import sarveshchavan777.quizgame.LevelSelection.SelectionLevelHomeScreen;
+import blueteammathquiz.quizgame.R;
+import blueteammathquiz.quizgame.segments.home.view.SelectionLevelHomeScreen;
 
 /**
  * Created by LENOVO on 12/12/2016.
  * Modified by Nkechi Nnaji on October 6, 2019
  */
 
-public class Splash extends Activity {
+public class SplashActivity extends Activity {
 
     Button btn;
     ImageView imageView;
@@ -26,7 +27,7 @@ public class Splash extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+        setContentView(R.layout.activity_splash);
         imageView = findViewById(R.id.splash_iv);
 
         if(imageView == null) throw new AssertionError();
@@ -43,7 +44,7 @@ public class Splash extends Activity {
                                    public void onClick(View view) {
                                        btn.startAnimation(animation);
 
-                                       Intent intent = new Intent(Splash.this, SelectionLevelHomeScreen.class);
+                                       Intent intent = new Intent(SplashActivity.this, SelectionLevelHomeScreen.class);
                                        startActivity(intent);
                                        overridePendingTransition(R.anim.slide_down,  R.anim.fadeout);
                                        finish();

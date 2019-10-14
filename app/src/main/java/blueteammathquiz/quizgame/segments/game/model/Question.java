@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame;
+package blueteammathquiz.quizgame.segments.game.model;
 
 import android.app.Activity;
 

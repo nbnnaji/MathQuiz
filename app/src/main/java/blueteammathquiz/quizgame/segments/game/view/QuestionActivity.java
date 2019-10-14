@@ -1,23 +1,22 @@
-package sarveshchavan777.quizgame;
+package blueteammathquiz.quizgame.segments.game.view;
 
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import blueteammathquiz.quizgame.segments.game.model.QuizHelper;
+import blueteammathquiz.quizgame.R;
+import blueteammathquiz.quizgame.segments.game.model.Question;
 
 
 public class QuestionActivity extends Activity {
@@ -118,7 +117,7 @@ public class QuestionActivity extends Activity {
         } else {
 
 
-            Intent intent = new Intent(QuestionActivity.this,won.class);
+            Intent intent = new Intent(QuestionActivity.this, WonActivity.class);
             Bundle b = new Bundle();
             b.putInt("score",score);
             intent.putExtras(b);

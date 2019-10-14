@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame;
+package blueteammathquiz.quizgame.segments.game.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 public class QuizHelper extends SQLiteOpenHelper {
     Context context;

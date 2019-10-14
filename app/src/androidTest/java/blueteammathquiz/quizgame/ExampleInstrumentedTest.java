@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame;
+package blueteammathquiz.quizgame;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

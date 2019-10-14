@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame.LevelSelection;
+package blueteammathquiz.quizgame.segments.practice.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,8 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-import sarveshchavan777.quizgame.R;
+import blueteammathquiz.quizgame.segments.home.view.SelectionLevelHomeScreen;
+import blueteammathquiz.quizgame.R;
 
 public class PracticeLevelActivity extends AppCompatActivity implements View.OnClickListener {
 

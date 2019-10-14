@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame;
+package blueteammathquiz.quizgame;
 
 import org.junit.Test;
 

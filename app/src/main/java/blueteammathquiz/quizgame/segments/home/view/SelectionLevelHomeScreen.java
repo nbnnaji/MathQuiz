@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame.LevelSelection;
+package blueteammathquiz.quizgame.segments.home.view;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,8 +12,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
-import sarveshchavan777.quizgame.QuestionActivity;
-import sarveshchavan777.quizgame.R;
+import blueteammathquiz.quizgame.segments.instructions.view.InstructionsActivity;
+import blueteammathquiz.quizgame.segments.practice.view.PracticeLevelActivity;
+import blueteammathquiz.quizgame.segments.game.view.QuestionActivity;
+import blueteammathquiz.quizgame.R;
 
 /**
  * Created by LENOVO on 12/12/2016.

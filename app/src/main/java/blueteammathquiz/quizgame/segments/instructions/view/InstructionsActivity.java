@@ -1,4 +1,4 @@
-package sarveshchavan777.quizgame.LevelSelection;
+package blueteammathquiz.quizgame.segments.instructions.view;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,7 +9,9 @@ import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
 
-import sarveshchavan777.quizgame.R;
+import blueteammathquiz.quizgame.segments.practice.view.PracticeLevelActivity;
+import blueteammathquiz.quizgame.segments.home.view.SelectionLevelHomeScreen;
+import blueteammathquiz.quizgame.R;
 
 public class InstructionsActivity extends AppCompatActivity {
 
