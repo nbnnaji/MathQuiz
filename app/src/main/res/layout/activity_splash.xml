@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SplashActivity layout modified by Nkechi Nnaji
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relatively"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/splash_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_thirty_two"
+        android:background="@color/colorPrimaryDark"/>
+
+        <Button
+            android:id="@+id/start_btn"
+            android:layout_marginTop="@dimen/margin_forty_eight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/let_s_get_started"
+            android:layout_gravity="center"
+            android:background="@drawable/round_shaped_btn"/>
+    </FrameLayout>
+
+
+</LinearLayout>

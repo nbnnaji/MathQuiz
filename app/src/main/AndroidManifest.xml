@@ -1,45 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sarveshchavan777.quizgame">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="blueteammathquiz.quizgame">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".QuestionActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="blueteammathquiz.quizgame.segments.instructions.view.InstructionsActivity"></activity>
+        <activity
+            android:name="blueteammathquiz.quizgame.segments.practice.view.PracticeLevelActivity"
+            android:label="Practice" />
+        <activity android:name="blueteammathquiz.quizgame.segments.game.view.QuestionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".LevelSelectionActivity"
-            android:label="Level Options"
-            >
+        <activity android:name="blueteammathquiz.quizgame.segments.game.view.ResultActivity" />
+        <activity
+            android:name="blueteammathquiz.quizgame.segments.home.view.SelectionLevelHomeScreen"
+            android:label="Welcome!">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Splash"
+        <activity
+            android:name="blueteammathquiz.quizgame.segments.splash.view.SplashActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".won"
+        <activity
+            android:name="blueteammathquiz.quizgame.segments.game.view.WonActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-        </activity>
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     </application>
 
 </manifest>

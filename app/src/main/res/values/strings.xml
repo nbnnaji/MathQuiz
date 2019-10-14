@@ -8,5 +8,13 @@
     <string name="easy_busy">Easy busy!</string> <!--Added by Nkechi Nnaji-->
     <string name="quite_challenging">Quite challenging!</string><!--Added by Nkechi Nnaji-->
     <string name="let_s_get_started">Let\'s Get Started!</string> <!--Added by Nkechi Nnaji-->
-    <string name="congratulations">Congratulations. You have won!</string>
+    <string name="congratulations">Congratulations. You have won!</string> <!--Added by Jayesh Shah-->
+    <string name="app_info">Give it a try! \n\n  MathQuiz is a math app developed by Blue team.
+        \n \n There are 3 challenge levels in the app: Easy, Medium and Difficult. \n You can also practice without a timer by clicking the practice button. \n Enter your answer using the keypad.
+        \nYou have one minute to finish the first set of questions.\n \n Goodluck!!</string><!--Added by Nkechi Nnaji-->
+    <string name="how_to_play">How to Play</string><!--Added by Nkechi Nnaji-->
+    <string name="practice_makes_perfect">Practice makes perfect</string>
+    <string name="play">Play</string>
+    <string name="final_score">FINAL SCORE:</string><!--Added by Nkechi Nnaji-->
+
 </resources>
