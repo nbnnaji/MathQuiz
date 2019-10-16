@@ -74,14 +74,14 @@
                 <TextView
                     android:id="@+id/txtQuestion"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="86dp"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:text="Question 15-15  = ?"
                     android:textColor="#4562f5"
-                    android:textSize="100sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" /> <!--Modified by Clinton Avery-->
             </LinearLayout>
 
@@ -95,23 +95,25 @@
                     android:layout_height="match_parent"
                     android:inputType="number"
                     android:shadowColor="#943d07"
-                    android:textSize="80sp"
-                    android:textStyle="bold"
-                    android:textColor="#599e0e"
                     android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"></EditText> <!--Modified by Clinton Avery-->
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#599e0e"
+                    android:textSize="18sp"
+                    android:textStyle="bold"></EditText> <!--Modified by Clinton Avery-->
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal">
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <Button
                     android:id="@+id/button1"
-                    android:layout_width="0dp"
-                    android:layout_height="212dp"
+                    android:layout_width="228dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@drawable/mybutton"
                     android:text="Submit Answer"

@@ -64,12 +64,15 @@ public class QuestionActivity extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getAnswer(whereTheAnswerGetsTyped.getText().toString());
+                if (whereTheAnswerGetsTyped.getText().length() > 0){
+                    getAnswer(whereTheAnswerGetsTyped.getText().toString());
+                }
             }
         });
     }
 
     public void getAnswer(String AnswerString) {
+
         if (currentQ.ANSWER == Integer.parseInt(AnswerString)) {
             score++;
             scored.setText("Score : " + score);
