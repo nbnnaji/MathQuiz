@@ -23,7 +23,7 @@ public class QuestionActivity extends Activity {
     List<Question> quesList;
     int score = 0;
     int qid = 0;
-
+    int totalQuestionsCount = 0;
 
     Question currentQ;
     TextView txtQuestion, times, scored;
@@ -37,6 +37,7 @@ public class QuestionActivity extends Activity {
 
         QuizHelper db = new QuizHelper(this);
         quesList = db.getAllQuestions();
+        totalQuestionsCount = quesList.size();
         currentQ = quesList.get(qid);
 
         txtQuestion = (TextView) findViewById(R.id.txtQuestion);
@@ -120,6 +121,7 @@ public class QuestionActivity extends Activity {
             Intent intent = new Intent(QuestionActivity.this, WonActivity.class);
             Bundle b = new Bundle();
             b.putInt("score",score);
+            b.putInt("totalQuestionsCount", totalQuestionsCount);
             intent.putExtras(b);
             startActivity(intent);
             finish();
