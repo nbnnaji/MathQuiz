@@ -14,7 +14,9 @@
         <activity
             android:name="blueteammathquiz.quizgame.segments.practice.view.PracticeLevelActivity"
             android:label="Practice" />
-        <activity android:name="blueteammathquiz.quizgame.segments.game.view.QuestionActivity">
+        <activity
+            android:name="blueteammathquiz.quizgame.segments.game.view.QuestionActivity"
+            android:windowSoftInputMode="stateVisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
