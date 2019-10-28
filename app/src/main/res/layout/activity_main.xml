@@ -33,6 +33,7 @@ UI theme & style modified by Nkechi Nnaji
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
+                android:paddingBottom="18dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -48,6 +49,14 @@ UI theme & style modified by Nkechi Nnaji
                     android:textColor="#000000"
                     android:textSize="23.0sp"
                     android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/player_avatar"
+                    android:visibility="visible"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/timers"
@@ -60,7 +69,7 @@ UI theme & style modified by Nkechi Nnaji
                     android:gravity="center"
                     android:text="Timing:00:00:49"
                     android:textColor="#000000"
-                    android:textSize="23.0sp"
+                    android:textSize="20.0sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>

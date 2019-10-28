@@ -8,6 +8,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -15,11 +16,18 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.greenrobot.eventbus.EventBus;
 
 import blueteammathquiz.quizgame.segments.game.model.Question;
 import blueteammathquiz.quizgame.R;
 import blueteammathquiz.quizgame.segments.game.model.QuizHelper;
+import blueteammathquiz.quizgame.segments.home.view.RecieverReadyEvent;
+
+import static blueteammathquiz.quizgame.R.drawable.ic_profile;
 
 
 public class QuestionActivity extends Activity {
@@ -32,11 +40,14 @@ public class QuestionActivity extends Activity {
     EditText whereTheAnswerGetsTyped;
     Button button1; // modified by Clinton Avery
     CharSequence submitLabel;
+    ImageView profileImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bitmap bitmap = (Bitmap) this.getIntent().getParcelableExtra("Bitmap"); //Added by Nkechi Nnaji
 
         QuizHelper db = new QuizHelper(this);
         quesList = db.getAllQuestions();
@@ -44,6 +55,26 @@ public class QuestionActivity extends Activity {
 
         txtQuestion = (TextView) findViewById(R.id.txtQuestion);
         button1 = (Button) findViewById(R.id.button1);
+        profileImage = findViewById(R.id.player_avatar);
+
+        //Added by Nkechi Nnaji
+        //Check for bitmap if added by user or use default image
+        if(bitmap == null){
+            profileImage.setBackgroundResource(R.drawable.ic_profile);
+            profileImage.setOnClickListener(new View.OnClickListener() {
+
+
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getApplicationContext().getApplicationContext(), "Upload your profile picture from homescreen", Toast.LENGTH_SHORT).show();
+
+
+                }
+            });
+
+        }
+
+        profileImage.setImageBitmap(bitmap); //Added by Nkechi Nnaji
 
         whereTheAnswerGetsTyped = (EditText) findViewById(R.id.theUserTypesTheAnswerHere);
         showSoftKeyboard(whereTheAnswerGetsTyped);
