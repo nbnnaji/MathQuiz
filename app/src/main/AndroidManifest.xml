@@ -53,7 +53,6 @@
             android:name=".segments.game.view.WonActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-        <activity android:name=".segments.login.view.RegisterActivity"></activity>
     </application>
 
 </manifest>

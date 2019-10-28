@@ -164,11 +164,7 @@ public class SelectionLevelHomeScreen extends AppCompatActivity {
     private void startMathQuiz(int levelChosen)
     {
         Intent playIntent = new Intent(this, PracticeLevelActivity.class);
-        image.setDrawingCacheEnabled(true);
-        Bitmap b = image.getDrawingCache();
         playIntent.putExtra("level", levelChosen);
-        playIntent.putExtra("Bitmap", b);
-
         this.startActivity(playIntent);
     }
 
