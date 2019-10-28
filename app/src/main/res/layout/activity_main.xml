@@ -2,6 +2,7 @@
 
 <!--
 UI theme & style modified by Nkechi Nnaji
+Profile pic of user added by Nkechi Nnaji
 
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,6 +50,8 @@ UI theme & style modified by Nkechi Nnaji
                     android:textColor="#000000"
                     android:textSize="23.0sp"
                     android:textStyle="bold" />
+
+                <!--Added by Nkechi Nnaji-->
                 <ImageView
                     android:id="@+id/player_avatar"
                     android:visibility="visible"

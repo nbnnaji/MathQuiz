@@ -68,7 +68,6 @@ public class QuestionActivity extends Activity {
                 public void onClick(View view) {
                     Toast.makeText(getApplicationContext().getApplicationContext(), "Upload your profile picture from homescreen", Toast.LENGTH_SHORT).show();
 
-
                 }
             });
 
