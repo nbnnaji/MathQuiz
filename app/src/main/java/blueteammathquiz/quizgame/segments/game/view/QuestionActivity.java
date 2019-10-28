@@ -86,7 +86,8 @@ public class QuestionActivity extends Activity {
             currentQ = quesList.get(qid);
             setQuestionView();
         } else {
-            Intent intent = new Intent(QuestionActivity.this,ResultActivity.class);
+//            Intent intent = new Intent(QuestionActivity.this,ResultActivity.class);
+            Intent intent = new Intent(QuestionActivity.this,WonActivity.class);
             Bundle b = new Bundle();
             b.putInt("score",score);
             intent.putExtras(b);
