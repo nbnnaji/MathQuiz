@@ -9,29 +9,45 @@ public class Question extends Activity {
     private String OPTA;
     private String OPTB;
     private String OPTC;
+    boolean isMultiply;
 
     public int ANSWER;
 
     // modified by Clinton Avery
     public Question(int id) {
+        if (id % 2 > 0){
+            isMultiply = true;
+        } else {
+            isMultiply = false;
+        }
         int firstDigit;
         int secondDigit;
         ID = id;
         firstDigit = (int)Math.floor(Math.random() * 10);
-        secondDigit = (int)Math.floor(Math.random() * 10);
-        QUESTION = getRandomQuestion(firstDigit, secondDigit);
-        ANSWER = getAnswerToRandomQuestion(firstDigit, secondDigit);
+        secondDigit = (int)Math.round(Math.random() * 10);
+        QUESTION = getRandomQuestion(firstDigit, secondDigit, isMultiply);
+        ANSWER = getAnswerToRandomQuestion(firstDigit, secondDigit, isMultiply);
     }
 
     // added by Clinton Avery
-    private String getRandomQuestion(int firstDigit, int secondDigit){
-        String theQuestionOutput = String.format("%s X %s = ", firstDigit, secondDigit);
+    private String getRandomQuestion(int firstDigit, int secondDigit, boolean isMultiply){
+        String theQuestionOutput;
+        if(isMultiply){
+            theQuestionOutput = String.format("%s X %s = ", firstDigit, secondDigit);
+        } else {
+            theQuestionOutput = String.format("%s + %s = ", firstDigit, (secondDigit));
+        }
         return theQuestionOutput;
     }
 
     // added by Clinton Avery
-    private int getAnswerToRandomQuestion(int firstDigit, int secondDigit){
-        int theAnswerToTheRandomQuestion = firstDigit * secondDigit;
+    private int getAnswerToRandomQuestion(int firstDigit, int secondDigit, boolean isMultiply){
+        int theAnswerToTheRandomQuestion;
+        if(isMultiply){
+            theAnswerToTheRandomQuestion = firstDigit * secondDigit;
+        } else {
+            theAnswerToTheRandomQuestion = firstDigit + secondDigit;
+        }
         return theAnswerToTheRandomQuestion;
     }
 
